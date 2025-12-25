@@ -1,0 +1,43 @@
+# ========================
+# Bazel build artifacts
+# ========================
+bazel-*
+bazel-bin/
+bazel-out/
+bazel-testlogs/
+
+# ========================
+# Bzlmod / Bazel cache
+# ========================
+.bazelrc.user
+MODULE.bazel.lock
+
+# ========================
+# Editor / IDE
+# ========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ========================
+# OS junk
+# ========================
+.DS_Store
+Thumbs.db
+
+# ========================
+# C++ build artifacts
+# ========================
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+
+# ========================
+# Temporary files
+# ========================
+*~
+*.tmp
+
