@@ -31,6 +31,7 @@ cc_test(
     srcs = ["test_localization.cpp"],
     deps = [
         "//:slam_core",
+        "//:navlog",
         "@googletest//:gtest_main",
     ],
     copts = [
@@ -39,3 +40,4 @@ cc_test(
         "-Werror",
     ],
 )
+

@@ -21,3 +21,22 @@ cc_library(
         "@sophus//:sophus",
     ],
 )
+
+
+cc_library(
+    name = "navlog",
+    hdrs = [
+        "navlog.hpp",
+    ],
+    strip_include_prefix = "",
+    visibility = ["//visibility:public"],
+    copts = [
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+    ],
+    deps = [
+        ":slam_core",      # uses Robot, World, CameraModel, etc.
+        "@sophus//:sophus",
+    ],
+)
