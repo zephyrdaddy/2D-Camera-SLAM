@@ -9,5 +9,28 @@ module(
     name = "visual_slam_2d",
     version = "0.1.0",
 )
-
+bazel_dep(name = "bazel_skylib", version = "1.4.2")
 bazel_dep(name = "googletest", version = "1.14.0")
+
+http_archive = use_repo_rule("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+http_archive(
+    name = "eigen",
+    build_file = "//external/eigen:package.BUILD",  # points to your BUILD file
+    strip_prefix = "eigen-3.4.0",
+    urls = ["https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.zip"],
+)
+
+http_archive(
+    name = "sophus",
+    build_file = "//external/sophus:package.BUILD",
+    strip_prefix = "Sophus-1.22.10",
+    urls = ["https://github.com/strasdat/Sophus/archive/refs/tags/1.22.10.tar.gz"]
+)
+
+http_archive(
+    name = "fmt",
+    build_file = "//external/fmt:package.BUILD",
+    urls = ["https://github.com/fmtlib/fmt/archive/refs/tags/10.1.0.tar.gz"],
+    strip_prefix = "fmt-10.1.0",
+)
