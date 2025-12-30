@@ -3,7 +3,12 @@ cc_library(
     hdrs = [
         "camera_model.hpp",
         "landmark.hpp",
-        "World.hpp",
+        "world.hpp",
+        "pose2d.hpp",
+        "sensor.hpp",
+        "camera_sensor.hpp",
+        "robot.hpp",
+        "localizer.hpp",
     ],
     strip_include_prefix = "",  # expose headers relative to this package
     visibility = ["//visibility:public"],
@@ -11,5 +16,8 @@ cc_library(
         "-Wall",
         "-Wextra",
         "-Werror",
+    ],
+    deps = [
+        "@sophus//:sophus",
     ],
 )
