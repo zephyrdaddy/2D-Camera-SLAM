@@ -27,11 +27,8 @@ TEST(RobotSensorTest, LandmarkProjection) {
     Landmark landmark(5.0f, 5.0f);
 
     Eigen::Vector2f landmark_wrt_world(5.0f, 5.0f);
-    std::cout << "robot pose " << world_T_robot.matrix() << std::endl;
     Pose2D world_T_cam = world_T_robot * robot.cameras()[0]->extrinsic();
-    std::cout << "world_T_cam " << world_T_cam.matrix() << std::endl;
     Eigen::Vector2f landmark_wrt_cam = world_T_cam.inverse() * landmark_wrt_world;
-    std::cout << "Ldk wrt cam " << landmark_wrt_cam << std::endl;
 
     float projected = 0.0f;
     bool in_view = robot.cameras()[0]->model().projectAndCheck(landmark_wrt_cam.x(), landmark_wrt_cam.y(), projected);
