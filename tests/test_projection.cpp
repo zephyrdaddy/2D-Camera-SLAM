@@ -28,3 +28,9 @@ TEST(CameraModelTest, LeftRightSymmetry) {
         -cam.project(-1.0f, 2.0f)
     );
 }
+
+TEST(CameraModelTest, PointInsideWidthIsVisible) {
+    CameraModel cam(100.0f, 640);
+    float projected = cam.project(1.0f, 5.0f);
+    EXPECT_TRUE(cam.isInView(projected));
+}
