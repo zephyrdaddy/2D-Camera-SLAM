@@ -30,6 +30,10 @@ class CameraModel {
         return focal_length_;
     }
 
+    float width() const {
+        return width_;
+    }
+
     private:
     const float focal_length_;
     const float width_;
